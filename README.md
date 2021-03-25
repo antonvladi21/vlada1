@@ -15,17 +15,17 @@ int main() {
     random_device rd;   // non-deterministic generator
     mt19937 gen(rd());
     
-    for (int i = 0; i < 5; i++) {
+   for (int i = 0; i < 5; i++) {
         vec.push_back(gen());
     }
     cout << "последовательность до: ";
     for (auto  element : vec)
         cout << (int)element.to_ulong() <<  endl;
     
-    auto maxIt = max_element(vec.begin(), vec.end(), BitComp);
+   auto maxIt = max_element(vec.begin(), vec.end(), BitComp);
     cout << endl << "максимум: index:" << distance(vec.begin(), maxIt) << " Значение максимума: " << (int)(*maxIt).to_ulong() << endl;
     
-    sort(vec.begin(), maxIt, BitComp);
+   sort(vec.begin(), maxIt, BitComp);
     cout << "последовательность после: ";
     for (auto element : vec)
         cout << (int)element.to_ulong() << endl;
